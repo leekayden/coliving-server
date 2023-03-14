@@ -5,6 +5,8 @@ const cors = require('cors')
 const morgan = require('morgan')
 const cookieParser = require('cookie-parser');
 
+port = process.env.PORT || 3003
+
 const corsConfig = {
   origin: true,
   credentials: true,
@@ -17,4 +19,5 @@ app.use(cors(corsConfig))
 app.use(cookieParser());
 
 require('./controllers')(app)
-app.listen(process.env.PORT || 3003)
+  app.listen(port)
+  console.log(`Listening on ${port}`)
