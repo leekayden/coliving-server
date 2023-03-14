@@ -1,6 +1,6 @@
-# Eden CoSpaces Server (ExpressJS)
+# Eden CoSpaces Server (GoLang)
 
-# how to use:
-# run "npm install --force" to install everything
-# run "npm start" to start the server
-# runs on localhost port 3003
+## Usage:
+### run `npm install --force` to install deps
+### run `npm start` to start the server
+### runs on localhost port 3003
