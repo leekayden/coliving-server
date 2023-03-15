@@ -6,6 +6,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func SetUpRoutes(router *gin.Engine) {
-	controllers.Test(router)
+func SetUpRoutes(r *gin.Engine) {
+	r.GET("/test", controllers.TestController)
+	userGroup := r.Group("/user")
+	{
+		userGroup.POST("/register", controllers.Register)
+	}
 }
