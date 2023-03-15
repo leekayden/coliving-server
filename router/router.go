@@ -2,7 +2,6 @@ package router
 
 import (
 	"coliving-server/controllers"
-
 	"github.com/gin-gonic/gin"
 )
 
