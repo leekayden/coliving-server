@@ -2,6 +2,7 @@ package main
 
 import (
 	"coliving-server/config"
+	"coliving-server/database"
 	leRouter "coliving-server/router"
 	"fmt"
 	"net/http"
@@ -13,6 +14,7 @@ import (
 
 func main() {
 	godotenv.Load(".env")
+	database.InitDatabase()
 
 	router := gin.New()
 	router.Use(gin.Logger())
@@ -27,6 +29,6 @@ func main() {
 	router.Use(config.NewCorsConfig())
 
 	leRouter.SetUpRoutes(router)
-	router.Run(":3003") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	router.Run(":3003")
 	fmt.Println("Started")
 }
