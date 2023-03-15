@@ -5,8 +5,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func testController(c *gin.Context) { // temporary solution
+func forbiddenErrMsgController(c *gin.Context) { // temporary solution
 	c.JSON(http.StatusOK, gin.H{
-		"message": "Hello World!",
+		"message": "Resource Forbidden!",
 	})
 }

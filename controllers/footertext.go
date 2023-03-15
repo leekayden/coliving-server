@@ -5,7 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func testController(c *gin.Context) { // temporary solution
+func footerTextController(c *gin.Context) { // temporary solution
 	c.JSON(http.StatusOK, gin.H{
 		"message": "Hello World!",
 	})
