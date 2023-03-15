@@ -11,7 +11,6 @@ import (
 
 func NewCorsConfig() gin.HandlerFunc {
 	frontend := os.Getenv("frontend")
-	fmt.Println(frontend)
 	return cors.New(cors.Config{
 		AllowOrigins:     []string{frontend},
 		AllowMethods:     []string{"PUT", "PATCH"},
