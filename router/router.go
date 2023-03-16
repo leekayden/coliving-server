@@ -6,12 +6,12 @@ import (
 )
 
 func SetUpRoutes(r *gin.Engine) {
-	r.GET("/test", controllers.testController)
-	r.GET("/appname", controllers.appNameController)
-	r.GET("/appcurrency", controllers.appCurrencyController)
-	r.GET("/footertext", controllers.footerTextController)
-	r.GET("/footertitle", controllers.footerTitleController)
-	r.GET("/403msg", controllers.forbiddenErrMsgController)
+	r.GET("/test", controllers.TestController)
+	r.GET("/appname", controllers.AppNameController)
+	r.GET("/appcurrency", controllers.AppCurrencyController)
+	r.GET("/footertext", controllers.FooterTextController)
+	r.GET("/footertitle", controllers.FooterTitleController)
+	r.GET("/403msg", controllers.ForbiddenErrMsgController)
 	userGroup := r.Group("/user")
 	{
 		userGroup.POST("/register", controllers.Register)
