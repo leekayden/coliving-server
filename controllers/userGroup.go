@@ -7,7 +7,8 @@ import (
 )
 
 type RegisterRequest struct {
-	id uint `json:"id"`
+	Id   uint   `json:"id"`
+	Test string `json:"test"`
 }
 
 func Register(c *gin.Context) {
@@ -16,6 +17,5 @@ func Register(c *gin.Context) {
 	if err := c.BindJSON(&requestBody); err != nil {
 		panic("on no error")
 	}
-	fmt.Printf("%#v\n", requestBody.id)
 	c.Next()
 }
