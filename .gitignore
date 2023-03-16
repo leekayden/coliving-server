@@ -132,3 +132,6 @@ dist
 
 # mysterious tmp folder
 tmp
+
+# db file
+test.db

@@ -1,6 +1,8 @@
 package database
 
 import (
+	"coliving-server/database/models"
+
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
@@ -13,6 +15,6 @@ func InitDatabase() {
 		panic("failed to connect database")
 	}
 
-	// db.AutoMigrate(&Product{})
+	db.AutoMigrate(&models.User{})
 	Db = db
 }

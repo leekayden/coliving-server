@@ -1,8 +1,6 @@
 package config
 
 import (
-	"fmt"
-	"os"
 	"time"
 
 	"github.com/gin-contrib/cors"
@@ -10,17 +8,16 @@ import (
 )
 
 func NewCorsConfig() gin.HandlerFunc {
-	frontend := os.Getenv("frontend")
 	return cors.New(cors.Config{
-		AllowOrigins:     []string{frontend},
+		AllowOrigins:     []string{Globals.Frontend},
 		AllowMethods:     []string{"PUT", "PATCH"},
 		AllowHeaders:     []string{"Origin"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
-		AllowOriginFunc: func(origin string) bool {
-			fmt.Println(origin)
-			return origin == "https://github.com"
-		},
+		// AllowOriginFunc: func(origin string) bool {
+		// 	fmt.Println(origin)
+		// 	return origin == "https://github.com"
+		// },
 		MaxAge: 12 * time.Hour,
 	})
 }

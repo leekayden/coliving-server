@@ -7,3 +7,6 @@
 
 # alternatively using air (live reload)
 # air server --port 8080
+
+todo:
+1. Add a formdata extractor middleware
