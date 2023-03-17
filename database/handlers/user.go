@@ -30,3 +30,7 @@ func DoesEmailExist(email string) (bool, error) {
 	}
 	return result.Id != 0, nil
 }
+
+
+// TODO
+// Update user info

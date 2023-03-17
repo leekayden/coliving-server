@@ -22,7 +22,7 @@ type RegisterRequest struct {
 func Register(c *gin.Context) {
 	fmt.Println("ran register")
 	var requestBody RegisterRequest
-	if err := c.Bind(&requestBody); err != nil {
+	if err := c.BindJSON(&requestBody); err != nil {
 		datatypes.GenericError(c)
 		return
 	}
