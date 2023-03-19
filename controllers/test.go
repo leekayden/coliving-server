@@ -7,6 +7,6 @@ import (
 
 func TestController(c *gin.Context) { // temporary solution
 	c.JSON(http.StatusOK, gin.H{
-		"message": "Hello World!",
+		"message": "Hello!",
 	})
 }

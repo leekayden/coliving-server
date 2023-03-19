@@ -3,7 +3,6 @@ package router
 import (
 	"coliving-server/controllers"
 	"net/http"
-
 	"github.com/gin-gonic/gin"
 )
 

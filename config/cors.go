@@ -10,14 +10,15 @@ import (
 func NewCorsConfig() gin.HandlerFunc {
 	return cors.New(cors.Config{
 		AllowOrigins:     []string{Globals.Frontend},
-		AllowMethods:     []string{"PUT", "PATCH"},
+		AllowMethods:     []string{"PUT", "PATCH", "POST", "DELETE"},
 		AllowHeaders:     []string{"Origin"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
-		// AllowOriginFunc: func(origin string) bool {
-		// 	fmt.Println(origin)
-		// 	return origin == "https://github.com"
-		// },
+		AllowOriginFunc: func(origin string) bool {
+			// fmt.Println(origin)
+			// return origin == "https://github.com"
+			return true;
+		},
 		MaxAge: 12 * time.Hour,
 	})
 }
